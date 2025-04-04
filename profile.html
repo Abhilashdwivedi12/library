@@ -1,0 +1,203 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .profile-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .profile-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #74ebd5;
+        }
+
+        .upload-btn {
+            margin-top: 15px;
+        }
+
+        .upload-btn input {
+            display: none;
+        }
+
+        .upload-btn label {
+            background: #74ebd5;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .upload-btn label:hover {
+            background: #56c5a9;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+        }
+
+        .profile-details p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <img id="profile-img" src="default-profile.png" alt="User Profile">
+        <div class="upload-btn">
+            <input type="file" id="profile-upload" accept="image/*">
+            <label for="profile-upload">Upload Profile Picture</label>
+        </div>
+        <div class="profile-details">
+            <p>John Doe</p>
+            <p>Email: johndoe@example.com</p>
+            <p>Member Since: 2023</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('profile-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .profile-container img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #74ebd5;
+        }
+        .upload-btn {
+            margin-top: 15px;
+        }
+        .upload-btn input {
+            display: none;
+        }
+        .upload-btn label {
+            background: #74ebd5;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .upload-btn label:hover {
+            background: #56c5a9;
+        }
+        .profile-details {
+            margin-top: 20px;
+        }
+        .profile-details input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .profile-details button {
+            background: #74ebd5;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .profile-details button:hover {
+            background: #56c5a9;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <img id="profile-img" src="default-profile.png" alt="User Profile">
+        <div class="upload-btn">
+            <input type="file" id="profile-upload" accept="image/*">
+            <label for="profile-upload">Upload Profile Picture</label>
+        </div>
+        <form class="profile-details" action="save_profile.php" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="number" name="year" placeholder="Enter Membership Year" required>
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('profile-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
